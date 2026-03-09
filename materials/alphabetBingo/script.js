@@ -107,14 +107,18 @@ function renderBoard() {
         cell.classList.add("selected");
       }
     }
-
+bingoPatterns.forEach((pattern, pIndex) => {
+      if (bingoAchieved[pIndex] && pattern.includes(arrayIndex)) {
+        cell.classList.add("bingo");
+      }
+    });
     cell.addEventListener("click", ()=>{
       if(arrayIndex===12)return;
       statusList[alphabetIndex]=!statusList[alphabetIndex];
       cell.classList.toggle("selected");
 
       if (checkBingo()){
-        //setTimeout(()=>alert("ビンゴ！🎉🎉🎉"), 100);
+        
         triggerPop();
       }
     });
