@@ -20,4 +20,3 @@ appList.forEach(app => {
 });
 
 container.innerHTML = htmlContent;
-

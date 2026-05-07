@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大きな数</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app-container">
+        <div id="screen-start">
+            <h1>＜大きな数＞</h1>
+
+            <div id="dummy">
+                <p>例題：千六百万九千五百三</p>
+                <div class="quiz-input-area">
+                    <input type="text" id="dummyInput" placeholder="答え：16009503" inputmode="numeric" pattern="[0-9 ]*">
+                </div>
+                
+            </div>
+            <p id="dummyFeedback" style="color: #4a90e2;">全部で5問！全問正解を目指そう！</p>
+            <button onclick="startQuiz('kanji-to-num')" class="btn-ktn">スタート！</button>
+        </div>
+
+        <div id="screen-quiz" style="display: none;">
+            <h2 id="question-number">だい　１　もん</h2>
+            <p id="question-text">ここに問題がでます</p>
+            <div class="quiz-input-area">
+            <input type="text" id="numInput" placeholder="答えを書いてね" inputmode="numeric" pattern="[0-9 ]*">
+            <br><button id="ansBtn">回答</button>
+            </div>
+            <p id="feedback"></p>
+            <div style="background:#eee; border-radius:10px; height:10px;">
+                <div id="progress"></div>
+            </div>
+        </div>
+
+        <div id="screen-result" style="display: none;">
+            <h1>よくがんばったね！</h1>
+            <p id="result-score"></p>
+            <div id="result-illustration">
+                <img id="result-image" src="" alt="結果のイラスト" style="max-width: 500px; height:auto;">
+            </div>
+            <p id="result-comment"></p>
+            <h2>【ふくしゅう】まちがえた　もんだい</h2>
+            <div id="wrong-answers-list"></div>
+            <button onclick="backToStart()">はじめに　もどる</button>
+        </div>
+    </div>
+
+    
+    <script src="script.js"></script>
+</body>
+</html>
